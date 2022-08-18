@@ -1,45 +1,45 @@
-import React,{useState} from "react";
+import React from "react";
 
 export default function About(props) {
-  const [myStyle, setmyStyle] = useState(
-    {
-      color: "black",
-      backgroundColor: "white",
-      // backgroundColor : '#2C3333'
-    }
+  // const [myStyle, setmyStyle] = useState(
+  //   {
+  //     color: "black",
+  //     backgroundColor: "white",
+  //     // backgroundColor : '#2C3333'
+  //   }
 
-  )
-    const [btnText, setbtnText] = useState('Dark Mode')
+  // )
+    // const [btnText, setbtnText] = useState('Dark Mode')
 
 
 
-   const toggleStyle = () => {
-      if(myStyle.color === 'black'){
-        setmyStyle(
-          {
-            color: "white",
-            backgroundColor : '#2C3333'
-          },
+  //  const toggleStyle = () => {
+  //     if(myStyle.color === 'black'){
+  //       setmyStyle(
+  //         {
+  //           color: "white",
+  //           backgroundColor : '#2C3333'
+  //         },
 
-          setbtnText('Light Mode')
-        )
-      }
-      else{
-        setmyStyle({
-          color: "black",
-          backgroundColor : 'white'
-        })
-      }
-    }
+  //         setbtnText('Light Mode')
+  //       )
+  //     }
+  //     else{
+  //       setmyStyle({
+  //         color: "black",
+  //         backgroundColor : 'white'
+  //       })
+  //     }
+  //   }
 
   return (
     <div className="container" style={!props.darkMode?{color:'black'}:{color:'white'}}>
       <h1>About Us</h1>
-      <div className="accordion" id="accordionExample" style={myStyle}>
-        <div className="accordion-item" style={myStyle}>
+      <div className="accordion" id="accordionExample"  >
+        <div className="accordion-item"  >
           <h2 className="accordion-header" id="headingOne">
             <button
-              style={myStyle}
+               
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
@@ -56,16 +56,16 @@ export default function About(props) {
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={myStyle}>
+            <div className="accordion-body" >
               <strong>
               This is a basic Project Website to Gain Knowledge about React.</strong>
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={myStyle}>
+        <div className="accordion-item"  >
           <h2 className="accordion-header" id="headingTwo">
             <button
-              style={myStyle}
+               
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -82,7 +82,7 @@ export default function About(props) {
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={myStyle}>
+            <div className="accordion-body"  >
               <strong>I am Sourabh. An IT Graduate, Who loves to learn new tech and create projects.</strong>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function About(props) {
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingThree">
             <button
-              style={myStyle}
+               
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -107,7 +107,7 @@ export default function About(props) {
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={myStyle}>
+            <div className="accordion-body"  >
               <strong>As This is a Project website</strong> i will Keep maintaining this while I will learn new things. They will be implemented into this.
             </div>
           </div>
