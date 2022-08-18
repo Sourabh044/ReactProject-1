@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, 
-         Routes,
-         Route, } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from './App';
-import About from './components/About';
-import TextForm from './components/TextForm';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
