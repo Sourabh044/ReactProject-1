@@ -60,6 +60,7 @@ function App() {
       {/* <Router> */}
         <Routes>
           <Route path='home' element={<TextForm mode = {mode} showAlert={showAlert} darkMode = {darkMode}/>}/>
+          <Route path='/' element={<TextForm mode = {mode} showAlert={showAlert} darkMode = {darkMode}/>}/>
           <Route path='about' element={<About  mode =  {mode}  darkMode = {darkMode}/>} />
         </Routes>
       {/* </Router> */}
