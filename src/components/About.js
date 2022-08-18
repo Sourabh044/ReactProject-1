@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-export default function About() {
+export default function About(props) {
   const [myStyle, setmyStyle] = useState(
     {
       color: "black",
@@ -33,19 +33,8 @@ export default function About() {
     }
 
   return (
-    <div className="container" style={myStyle}>
+    <div className="container" style={!props.darkMode?{color:'black'}:{color:'white'}}>
       <h1>About Us</h1>
-      <div className="form-check form-switch form-check-reverse">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          id="flexSwitchCheckReverse"
-          onClickCapture={toggleStyle}
-        />
-        <label className="form-check-label" htmlFor="flexSwitchCheckReverse">
-        {btnText}
-        </label>
-      </div>
       <div className="accordion" id="accordionExample" style={myStyle}>
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header" id="headingOne">
@@ -58,7 +47,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              About #1
+              About This Website.
             </button>
           </h2>
           <div
@@ -68,7 +57,8 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>First About</strong>
+              <strong>
+              This is a basic Project Website to Gain Knowledge about React.</strong>
             </div>
           </div>
         </div>
@@ -83,7 +73,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              About #2
+              About Developer
             </button>
           </h2>
           <div
@@ -93,7 +83,7 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong>
+              <strong>I am Sourabh. An IT Graduate, Who loves to learn new tech and create projects.</strong>
             </div>
           </div>
         </div>
@@ -108,7 +98,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              About #3
+              Future
             </button>
           </h2>
           <div
@@ -118,7 +108,7 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong>
+              <strong>As This is a Project website</strong> i will Keep maintaining this while I will learn new things. They will be implemented into this.
             </div>
           </div>
         </div>
