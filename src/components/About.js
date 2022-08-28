@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function About(props) {
   // const [myStyle, setmyStyle] = useState(
   //   {
@@ -31,7 +32,6 @@ export default function About(props) {
   //       })
   //     }
   //   }
-
   return (
     <div className="container" style={!props.darkMode?{color:'black'}:{color:'white'}}>
       <h1>About Us</h1>

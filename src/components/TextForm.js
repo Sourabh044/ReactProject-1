@@ -38,8 +38,25 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
-    
+    function Predict(){
+        console.log(text);
+        fetch('http://127.0.0.1:8000/check',{
+            method: 'POST',
+            headers:{
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({text : text})
+        }).then(response => response.json()).then(
+            responseJson => {
+                console.log(responseJson);
+                setresult(responseJson.result);
+            }
+        )
+        }
 
+
+    const [result, setresult] = useState('');
     const [text, setText] = useState('');
 
     // const style = {
@@ -58,7 +75,7 @@ export default function TextForm(props) {
             <a href="">|</a>
             <button disabled className='btn btn-outline-primary mx-2 my-1'>Add to List</button>
             <a href="">|</a>
-            <button disabled className='btn btn-outline-success mx-2 my-1'>Detect</button>
+            <button className='btn btn-outline-success mx-2 my-1' onClick={Predict}>Detect</button>
             <a href="">|</a>
             <button  className='btn btn-danger mx-2 my-1'  onClick={ClearText}>Clear</button>
             <a href="">|</a>
@@ -71,6 +88,11 @@ export default function TextForm(props) {
                 <p className="text-body-light my-1">Characters = {text.length}</p>
                 <p className="text-body-light">Words = {text.split(' ').filter((ele)=>{return ele.length!==0}).length}</p>
             </div>
+
+            <div>
+                <p>{result}</p>
+            </div>
+
         </div>
     )
 }

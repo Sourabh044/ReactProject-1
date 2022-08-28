@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
+
 
 export default function Navbar(props) {
   const capitalize = (word) =>{
     const lower = word.toLowerCase();
     return lower.charAt(0).toUpperCase() + lower.slice(1)
 }
+
+  const location = useLocation();
+  console.log(location.pathname);
+  // const gettingCurrent = browser.tabs.getCurrent();
+  // console.log(gettingCurrent)
+
     
   return (
     <>
@@ -28,19 +35,20 @@ export default function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="nav nav-pills mx-auto mb-2 mb-lg-0">
+            {/* <ul className="nav nav-pills nav-justified"> */}
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="home">
+                <Link className={`nav-link ${location.pathname==='/home'?'active':''}`} aria-current="page" to="home">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/home">
                   My List
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="about">
+                <Link className={`nav-link ${location.pathname==='/about'?'active':''}`} to="about">
                   {props.aboutText}
                 </Link>
               </li>

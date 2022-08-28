@@ -3,7 +3,7 @@ import './App.css';
 import Alert from './components/Alert';
 import About from './components/About';
 import Navbar from './components/Navbar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation  } from 'react-router-dom';
 import TextForm from './components/TextForm';
 
 function App() {
