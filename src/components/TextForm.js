@@ -40,7 +40,7 @@ export default function TextForm(props) {
 
     function Predict(){
         console.log(text);
-        fetch('http://127.0.0.1:8000/check',{
+        fetch('http://43.205.177.189:8000/check',{
             method: 'POST',
             headers:{
                 'Accept' : 'application/json',
@@ -89,8 +89,10 @@ export default function TextForm(props) {
                 <p className="text-body-light">Words = {text.split(' ').filter((ele)=>{return ele.length!==0}).length}</p>
             </div>
 
-            <div>
-                <p>{result}</p>
+            <div className='text-center text-uppercase' style={result=='stress'?{color:'green'}:{color:'red'}}>
+                <hr />
+                <h1>{result}</h1>
+                <hr />
             </div>
 
         </div>

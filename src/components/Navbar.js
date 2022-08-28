@@ -10,17 +10,14 @@ export default function Navbar(props) {
 }
 
   const location = useLocation();
-  console.log(location.pathname);
-  // const gettingCurrent = browser.tabs.getCurrent();
-  // console.log(gettingCurrent)
-
+  // console.log(location.pathname);
     
   return (
     <>
       {/* <nav className={`navbar navbar-expand-lg navbar-${props.darkMode?'light':'dark'} bg-${props.darkMode?'dark':'light'}`}> */}
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode==='light'?'light':'dark'}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="home">
+          <Link className="navbar-brand" to="/">
             {props.title}
           </Link>
           <button
@@ -38,12 +35,12 @@ export default function Navbar(props) {
             <ul className="nav nav-pills mx-auto mb-2 mb-lg-0">
             {/* <ul className="nav nav-pills nav-justified"> */}
               <li className="nav-item">
-                <Link className={`nav-link ${location.pathname==='/home'?'active':''}`} aria-current="page" to="home">
+                <Link className={`nav-link ${location.pathname==='/'?'active':''}`} aria-current="page" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/home">
+                <Link className="nav-link" to="/">
                   My List
                 </Link>
               </li>
