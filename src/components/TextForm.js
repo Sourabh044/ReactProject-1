@@ -26,10 +26,13 @@ export default function TextForm(props) {
         let newText = text
         if(newText===''){
             props.showAlert('Text Box is already Empty !!','info')
+            setresult('')
         }
         else{
             setText('');
             props.showAlert('Cleared','success')
+            setresult('')
+
         }
     }
     
@@ -72,24 +75,24 @@ export default function TextForm(props) {
                 <textarea className="form-control" value={text} onChange={changeupperclick} style={props.mode==='light'?{backgroundColor:'#d7c2a8'}:{backgroundColor:'#3f3d52',color:'white'}} id="mybox" rows="10"></textarea>
             </div>
                 <hr />
-            <a href="">|</a>
+            <a >|</a>
             <button disabled className='btn btn-outline-primary mx-2 my-1'>Add to List</button>
-            <a href="">|</a>
+            <a >|</a>
             <button className='btn btn-outline-success mx-2 my-1' onClick={Predict}>Detect</button>
-            <a href="">|</a>
+            <a >|</a>
             <button  className='btn btn-danger mx-2 my-1'  onClick={ClearText}>Clear</button>
-            <a href="">|</a>
+            <a >|</a>
             <button  className='btn btn-dark mx-2 my-1' onClick={handleUpClick} >Upper Case</button>
-            <a href="">|</a>
+            <a >|</a>
             <button  className='btn btn-warning mx-2 my-1' onClick={handleloClick} >Lower Case</button>
-            <a href="">|</a>
+            <a>|</a>
             <div>
                 <hr />
                 <p className="text-body-light my-1">Characters = {text.length}</p>
                 <p className="text-body-light">Words = {text.split(' ').filter((ele)=>{return ele.length!==0}).length}</p>
             </div>
 
-            <div className='text-center text-uppercase' style={result=='stress'?{color:'green'}:{color:'red'}}>
+            <div className='text-center text-uppercase' style={result==='stress'?{color:'red'}:{color:'green'}}>
                 <hr />
                 <h1>{result}</h1>
                 <hr />
