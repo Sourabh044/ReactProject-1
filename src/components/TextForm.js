@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Spinload from './Spinload';
 
 export default function TextForm(props) {
     const handleUpClick = () =>{
@@ -43,6 +44,7 @@ export default function TextForm(props) {
 
     function Predict(){
         console.log(text);
+        setloading(true);
         fetch('https://stress-detection-api.herokuapp.com/check',{
             method: 'POST',
             headers:{
@@ -54,6 +56,7 @@ export default function TextForm(props) {
             responseJson => {
                 console.log(responseJson);
                 setresult(responseJson.result);
+                setloading(false);
             }
         )
         }
@@ -61,6 +64,7 @@ export default function TextForm(props) {
 
     const [result, setresult] = useState('');
     const [text, setText] = useState('');
+    const [loading, setloading] = useState(false);
 
     // const style = {
     //     color : 'grey',
@@ -94,6 +98,7 @@ export default function TextForm(props) {
 
             <div className='text-center text-uppercase' style={result==='stress'?{color:'red'}:{color:'green'}}>
                 <hr />
+                {loading && <Spinload/>}
                 <h1>{result}</h1>
                 <hr />
             </div>
