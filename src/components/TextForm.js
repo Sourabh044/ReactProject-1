@@ -43,7 +43,7 @@ export default function TextForm(props) {
 
     function Predict(){
         console.log(text);
-        fetch('http://43.205.177.189:8000/check',{
+        fetch('https://stress-detection-api.herokuapp.com/check',{
             method: 'POST',
             headers:{
                 'Accept' : 'application/json',
