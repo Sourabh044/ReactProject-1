@@ -40,7 +40,7 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link disabled" to="/">
                   My List
                 </Link>
               </li>
@@ -56,11 +56,11 @@ export default function Navbar(props) {
               </button>
               <ul className="dropdown-menu">
                 <li><strong className="dropdown-text" >Light Themes</strong></li>
-                <li><a className="dropdown-item" onClick={() =>{props.toggleMode('#F7ECDE')}}>Antique</a></li>
-                <li><a className="dropdown-item" onClick={() =>{props.toggleMode('#CEE5D0')}}>Teal</a></li>
+                <li><a className="dropdown-item" href={() => false} onClick={() =>{props.toggleMode('#F7ECDE')}}>Antique</a></li>
+                <li><a className="dropdown-item" href={() => false} onClick={() =>{props.toggleMode('#CEE5D0')}}>Teal</a></li>
                 <li><strong className="dropdown-text" >Dark Themes</strong></li>
-                <li><a className="dropdown-item" onClick={() =>{props.toggleMode('#000000')}}>Blackout</a></li>
-                <li><a className="dropdown-item" onClick={() =>{props.toggleMode('#3E065F')}}>Russian Violet</a></li>
+                <li><a className="dropdown-item" href={() => false} onClick={() =>{props.toggleMode('#000000')}}>Blackout</a></li>
+                <li><a className="dropdown-item" href={() => false} onClick={() =>{props.toggleMode('#3E065F')}}>Russian Violet</a></li>
               </ul>
           </div>
             <div className="form-check form-switch">
