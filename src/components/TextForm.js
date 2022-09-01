@@ -43,6 +43,10 @@ export default function TextForm(props) {
     }
 
     function Predict(){
+        if(text ===''){
+            props.showAlert('Enter Text To Analyze!!','warning')
+        }
+        else{
         console.log(text);
         setloading(true);
         fetch('https://stress-detection-api.herokuapp.com/check',{
@@ -59,7 +63,7 @@ export default function TextForm(props) {
                 setloading(false);
             }
         )
-        }
+        }}
 
 
     const [result, setresult] = useState('');
