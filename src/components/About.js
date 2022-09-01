@@ -108,14 +108,17 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body"  >
-              <strong>As This is a Project website</strong> i will Keep maintaining this while I will learn new things. They will be implemented into this.
-            </div>
+              <strong>As This is a Project website</strong> i will Keep maintaining this while I will learn new things. They will be implemented into this. </div>
           </div>
         </div>
       </div>
       <br />
       <br />
       <br />
+      <div className="container  text-center">
+      <a className="fa fa-github link-dark" style={{fontSize:'50px'}} href='https://github.com/Sourabh044/' rel="noreferrer" target= '_blank'> </a>
+      <br />
+      Github</div>
     </div>
   );
 }
