@@ -115,10 +115,11 @@ export default function About(props) {
       <br />
       <br />
       <br />
-      <div className="container  text-center">
-      <a className="fa fa-github link-dark" style={{fontSize:'50px'}} href='https://github.com/Sourabh044/' rel="noreferrer" target= '_blank'> </a>
-      <br />
-      Github</div>
+      <div className="container  text-center  d-flex justify-content-center">
+      <a className="fa fa-github link-dark mx-3 text-decoration-none" style={{fontSize:'50px'}} href='https://github.com/Sourabh044/' rel="noreferrer" target= '_blank'> </a>
+      <a className="fa fa-linkedin link-dark mx-3 text-decoration-none " style={{fontSize:'50px'}} href='https://www.linkedin.com/in/sourabh044/' rel="noreferrer" target= '_blank'> </a>
+      
+      </div>
     </div>
   );
 }
